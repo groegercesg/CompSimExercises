@@ -68,7 +68,6 @@ class Polynomial(object):
         for i in range(0, len(list_a)):
             list_a[i] = (i+1) * list_a[i]
         p = Polynomial(list_a)
-        print("poly")
         return p.printPoly()
         
     def IntegratePoly(self, a):
