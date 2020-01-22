@@ -7,8 +7,9 @@ class Polynomial(object):
        self.list = n
     
     def PolyToList(self, input_list):
+        #print("polytolist input" + str(input_list))
         # function to process polynomials into list form
-        input_list = input_list.split(" ")
+        input_list = (str(input_list)).split(" ")
         for i in range(0, len(input_list)-1):
             if input_list[i] == '-':
                 input_list[i+1] = '-' + input_list[i+1]
@@ -25,7 +26,10 @@ class Polynomial(object):
         check_pass = False
         while check_pass != True:
             check_pass = False
+            
             for i in range(0, int((input_list[-1])[-1])+1):
+                #print(i)
+                #print((input_list[i])[-1])
                 if (input_list[i])[-1] != str(i):
                     input_list.insert(i, ("0x^"+str(i)))
                     check_pass = True
@@ -52,28 +56,31 @@ class Polynomial(object):
                 list_a.append(0.0)
         #print([x + y for x, y in zip(list_a, list_b)])
         p = Polynomial([x + y for x, y in zip(list_a, list_b)])
-        p.printPoly()
+        return p.printPoly()
         
     def DerivePoly(self, a):
         # method to calculate the derivative of a polynomial and return the result as a new
         # polynomial
+        #print(a)
         list_a = self.PolyToList(a)
+        #print(list_a)
         list_a.pop(0)
         for i in range(0, len(list_a)):
             list_a[i] = (i+1) * list_a[i]
         p = Polynomial(list_a)
-        p.printPoly()
+        print("poly")
+        return p.printPoly()
         
     def IntegratePoly(self, a):
         # method to calculate the indefinite integral of a polynomial and return the result as a
         # new polynomial
         c = 2 # integration constant
-        list_a = self.PolyToList(a)
+        list_a = self.PolyToList(str(a))
         for i in range(0, len(list_a)):
             list_a[i] = list_a[i] / (i+1)
         list_a.insert(0, c)
         p = Polynomial(list_a)
-        p.printPoly()
+        return p.printPoly()
         
     def printPoly(self):
         # print the list by concatenating in the proper format
@@ -93,7 +100,7 @@ class Polynomial(object):
         # remove weird irregularities
         # "1x", "+ -",
         s = ((s.replace("1.0x", "x")).replace("1x", "x")).replace("+ -", "- ")
-        print(s)
+        return s
         
 '''
 Code to test Polynomial class
