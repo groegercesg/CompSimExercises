@@ -53,17 +53,16 @@ class Decay(object):
         # while loop until over half of nucleis have been decayed
         while self.updateN() > int(0.5*Nuc_initial):
             hl_sim += self.delta_t
-            
             # loop through every Grid entry
             for i in range(0, self.N):
                 for j in range(0, self.N):
                     if self.Grid[i][j] == 1:
                         # probability for a individual nuclei to decay
-                        decay_prob = random.randint(0,1)
+                        decay_prob = random.uniform(0,1)
                         '''
                         is this the correct way round?
                         '''
-                        if decay_prob >= p:
+                        if p >= decay_prob:
                             self.Grid[i][j] = 0
         
         # decay simulation now over, time to output final values
@@ -77,6 +76,7 @@ class Decay(object):
             
 def main():
     # decay constant, length of 2D array, timestep
+    '''
     try:
         decaycons = float(input("What is the value of your decay constant: \n"))
         len2D = int(input("What is the length of the 2D array: \n"))
@@ -86,8 +86,9 @@ def main():
     except:
         print("Data entered was not in correct format, please try again!")
         main()
+    '''
         
-    #d = Decay(0.02775,50,0.01)
-    #d.decay_simulation()
+    d = Decay(0.02775,50,0.01)
+    d.decay_simulation()
 
 main()
