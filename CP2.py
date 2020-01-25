@@ -6,7 +6,6 @@ import random
 import math
 
 class Decay(object):
-    
     def __init__(self, myLambda, myN, myDelta_t):
         # constructor, pulls in all relevant details to the function
         self.decayCons = myLambda # decay constant
@@ -23,9 +22,6 @@ class Decay(object):
     def print_nuclei(self):
         # method to print nuclei, iterates through vertical and horizontal with 
         # two loops, printing line by line
-        '''
-        This needs more work
-        '''
         for i in range(0, len(self.Grid)):
             s = ""
             for j in range(len(self.Grid[i])):
