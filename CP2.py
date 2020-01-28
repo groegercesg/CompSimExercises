@@ -58,7 +58,7 @@ class Decay(object):
                         '''
                         is this the correct way round?
                         '''
-                        if p >= decay_prob:
+                        if decay_prob < p:
                             self.Grid[i][j] = 0
         
         # decay simulation now over, time to output final values
