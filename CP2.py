@@ -69,10 +69,11 @@ class Decay(object):
         print("Final number of undecayed nuclei: " + str(self.updateN()))
         print("Simulated value of half-life: " + str(hl_sim))
         print("Actual value of half-life: " + str(hl_act))
-            
+
+'''        
 def main():
+
     # decay constant, length of 2D array, timestep
-    '''
     try:
         decaycons = float(input("What is the value of your decay constant: \n"))
         len2D = int(input("What is the length of the 2D array: \n"))
@@ -81,10 +82,10 @@ def main():
         d.decay_simulation()
     except:
         print("Data entered was not in correct format, please try again!")
-        main()
-    '''
-        
-    d = Decay(0.02775,50,0.01)
-    d.decay_simulation()
+       main()
+
+    #d = Decay(0.02775,50,0.01)
+    #d.decay_simulation()
 
 main()
+'''
