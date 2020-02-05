@@ -61,3 +61,7 @@ def main():
     
 main()
 '''
+
+# Feedback:
+# Use matplotlib: meshgrid and np.vectorize() to speed up calculation (on 
+# a method that encapsulates lines 41-46).
