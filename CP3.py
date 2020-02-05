@@ -7,7 +7,7 @@ import numpy as np
 
 class Mandelbrot(object):
     def __init__(self, myIterations, myXMin, myXMax, myYMin, myYMax, myFilename):
-        # constructor, pulls in all relevant details to the function
+        # constructor, pulls in all relevant details to the class
         self.Iterations = myIterations # number of iterations of mandelbrot method
         self.XMin = myXMin # xmin of sim and picture
         self.XMax = myXMax
@@ -47,6 +47,7 @@ class Mandelbrot(object):
 
         # Z - image data in scalar (data visualized usign a colormap)
         # plt.cm.prism - using colourmap of type prism (map scalar data to colours)
+        # interpolation = 'none' - have blocks of colour and no artificial smoothing
         # extent - The bounding box in data coordinates that the image will fill, min()/max() lowest/largest value in an item
         plt.imshow(Z, cmap = plt.cm.prism, interpolation = 'none', extent = (X.min(), X.max(), Y.min(), Y.max()))
         # save image out as "mandelbrot_python.svg"
