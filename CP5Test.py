@@ -7,7 +7,6 @@ class OrbitalMotionTest(object):
         
         a = Animation(s.xalist, s.yalist, s.xblist, s.yblist)
         a.display()
-    
         
 def main():
     omt = OrbitalMotionTest()
