@@ -86,7 +86,7 @@ class Simulation(object):
         count = 0
         
         # loop
-        while t < Simulation.DaySec: # orbital period is apparently 0.319 *DaySec, but we'll roll with this for now
+        while t < Simulation.DaySec: # orbital period is apparently 0.319 * DaySec, but we'll roll with this for now
             # Compute force
             rx = self.xb - self.xa
             ry = self.yb - self.ya
