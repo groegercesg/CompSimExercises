@@ -122,6 +122,9 @@ class Simulation(object):
             self.xblist.append(self.xb)
             self.yblist.append(self.yb)
             
+            # Code for printing KE at a suitable interval (when count % 100 == 0)
+            # this being, as in our simulation we have 1001 iterations, 10 times
+            # or at every 10% of the simulation
             count += 1
             if count % 100 == 0:
                 print("Total Kinetic Energy: " + str(self.TotalKE()) + " J")
