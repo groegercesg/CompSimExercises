@@ -31,17 +31,7 @@ class Simulation(object):
         self.yva = float((data_list_a[3])[0])
 
         self.ma = float((data_list_a[4])[0])
-
-        '''
-        self.xa = 0
-        self.ya = 0
-
-        self.xva = 0
-        self.yva = 0
-
-        self.ma = 6.4185e23
-        '''
-
+        
         # Phobos
         self.xb = float((data_list_b[0])[0])
         self.yb = float((data_list_b[1])[0])
@@ -51,19 +41,7 @@ class Simulation(object):
         # v_{2} = \sqrt{(G * m_{1})/(r_{12})}
 
         self.mb = float((data_list_b[4])[0])
-
-        '''
-        self.orb_radi = 9.3773e6 # orbital radius r_{12}
-        self.xb = self.orb_radi
-        self.yb = 0
-
-        self.xvb = 0
-        self.yvb = math.sqrt((Simulation.G * self.ma)/(self.xb))
-        # v_{2} = sqrt{(G * m_{1})/(r_{12})}
-
-        self.mb = 1.06e16
-        '''
-
+        
         # Object Position Lists
         self.xalist = []
         self.yalist = []
