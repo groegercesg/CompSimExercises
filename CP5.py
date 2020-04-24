@@ -31,7 +31,7 @@ class Simulation(object):
         self.yva = float((data_list_a[3])[0])
 
         self.ma = float((data_list_a[4])[0])
-        
+
         # Phobos
         self.xb = float((data_list_b[0])[0])
         self.yb = float((data_list_b[1])[0])
@@ -41,7 +41,7 @@ class Simulation(object):
         # v_{2} = \sqrt{(G * m_{1})/(r_{12})}
 
         self.mb = float((data_list_b[4])[0])
-        
+
         # Object Position Lists
         self.xalist = []
         self.yalist = []
