@@ -2,19 +2,19 @@ import math
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-class SineAnimation1(object):
 
+class SineAnimation1(object):
     def __init__(self):
         # set initial and final x coordinates of circle
         self.xpos = 0.0
         self.xmax = 2*math.pi
-        
+
         # set simulation parameters
         self.niter = 500
         self.xincr = (self.xmax - self.xpos)/self.niter
 
     def init(self):
-        # initialiser for animator
+        # initializer for animator
         return self.patch,
 
     def animate(self, i):
@@ -28,8 +28,10 @@ class SineAnimation1(object):
         fig = plt.figure()
         ax = plt.axes()
 
-        # create circle of radius 0.1 centred at initial coordinates and add to axes
-        self.patch = plt.Circle((self.xpos, math.sin(self.xpos)), 0.1, color = 'g', animated = True)
+        # create circle of radius 0.1 centred at initial coordinates
+        # and add to axes
+        self.patch = plt.Circle((self.xpos, math.sin(self.xpos)),
+                                0.1, color='g', animated=True)
         ax.add_patch(self.patch)
 
         # set up the axes
@@ -40,15 +42,17 @@ class SineAnimation1(object):
         ax.set_ylabel('sin(x)')
 
         # create the animator
-        anim = FuncAnimation(fig, self.animate, init_func = self.init, frames = self.niter, repeat = False, interval = 50, blit = True)
+        anim = FuncAnimation(  # noqa: F841
+            fig, self.animate, init_func=self.init, frames=self.niter,
+            repeat=False, interval=50, blit=True)
 
         # show the plot
         plt.show()
 
 
-
 def main():
     s = SineAnimation1()
     s.run()
-    
+
+
 main()
